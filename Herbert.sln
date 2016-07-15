@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F1F3D6A9-B76E-4440-BDB7-A2E56D4CED5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A306718D-746E-4372-A874-DB5D4AB34254}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Herbert.Web", "src\Herbert.Web\Herbert.Web.xproj", "{8FC5B5FF-46D9-4C31-B1E3-5CDDEEF7D403}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FC5B5FF-46D9-4C31-B1E3-5CDDEEF7D403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC5B5FF-46D9-4C31-B1E3-5CDDEEF7D403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC5B5FF-46D9-4C31-B1E3-5CDDEEF7D403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC5B5FF-46D9-4C31-B1E3-5CDDEEF7D403}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8FC5B5FF-46D9-4C31-B1E3-5CDDEEF7D403} = {F1F3D6A9-B76E-4440-BDB7-A2E56D4CED5E}
+	EndGlobalSection
+EndGlobal
