@@ -10,7 +10,7 @@
         /// <summary>
         /// Get and set the GUID of this user
         /// </summary>
-        public string Id { get; set; }
+        public Guid Id { get; set; }
         /// <summary>
         /// Get and set the email address of this user, this will need when sign in
         /// </summary>
@@ -23,6 +23,10 @@
         /// Get and set the nick name of user
         /// </summary>
         public string NickName { get; set; }
+        /// <summary>
+        /// Get and set the nick name of user
+        /// </summary>
+        public UserRole Role { get; set; }
         /// <summary>
         /// Get and set the register source type of user
         /// </summary>
