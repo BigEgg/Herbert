@@ -14,7 +14,7 @@ namespace Herbert.Data.Repositories.Interfaces
         /// <param name="encryptPassword">The encrypt password.</param>
         /// <param name="nickName">The nick name.</param>
         /// <param name="registerSource">The register source.</param>
-        void NewUser(string email, string encryptPassword, string nickName, RegisterSourceType registerSource);
+        void AddNewUser(string email, string encryptPassword, string nickName, RegisterSourceType registerSource);
 
         /// <summary>
         /// Gets The application user with specific email.

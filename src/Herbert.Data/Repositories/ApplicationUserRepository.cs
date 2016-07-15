@@ -23,7 +23,7 @@ namespace Herbert.Data.Repositories
         /// <param name="encryptPassword">The encrypt password.</param>
         /// <param name="nickName">The nick name.</param>
         /// <param name="registerSource">The register source.</param>
-        public void NewUser(string email, string encryptPassword, string nickName, RegisterSourceType registerSource)
+        public void AddNewUser(string email, string encryptPassword, string nickName, RegisterSourceType registerSource)
         {
             Context.ApplicationUsers
                 .Add(new ApplicationUser()
