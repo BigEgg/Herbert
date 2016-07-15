@@ -32,7 +32,9 @@ namespace Herbert.Data.Repositories
                     Password = encryptPassword,
                     NickName = nickName,
                     RegisterSource = registerSource,
-                    Role = UserRole.User
+                    Role = UserRole.User,
+                    CreatedTime = DateTime.UtcNow,
+                    LastUpdated = DateTime.UtcNow
                 });
             Context.SaveChanges();
         }
