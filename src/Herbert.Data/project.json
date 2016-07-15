@@ -1,0 +1,19 @@
+﻿{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Microsoft.EntityFrameworkCore": "1.0.0",
+    "Microsoft.EntityFrameworkCore.Relational": "1.0.0",
+    "NETStandard.Library": "1.6.0",
+    "Herbert.Model": "1.0.0-*"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": [
+        "dnxcore50",
+        "portable-net40+win8"
+      ]
+    }
+  }
+}
