@@ -30,10 +30,11 @@
                 .IsRequired();
 
             entityBuilder.Property(u => u.CreatedTime)
-                .ValueGeneratedOnAdd();
+                .IsConcurrencyToken()
+                .IsRequired();
 
             entityBuilder.Property(u => u.LastUpdated)
-                .ValueGeneratedOnAddOrUpdate();
+                .IsRequired();
         }
     }
 }
