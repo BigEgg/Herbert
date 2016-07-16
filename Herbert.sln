@@ -10,15 +10,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Herbert.Model", "src\Herbert.Model\Herbert.Model.xproj", "{591EB318-A239-4D9D-9B93-18A1F0BF1EB1}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Herbert.Data", "src\Herbert.Data\Herbert.Data.xproj", "{758A53AB-F24B-4C1E-A83F-726DD9B3E0A3}"
-EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Herbert.API", "src\Herbert.API\Herbert.API.xproj", "{AE1F9C07-8573-46E5-A643-25795F1DCDBB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{403DC38E-AF50-4636-85BB-D1C93C8CA508}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Herbert.Data.Tests", "test\Herbert.Data.Tests\Herbert.Data.Tests.xproj", "{E3C6F0E1-57F3-4F41-9287-527F61B674E0}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Herbert.Models", "src\Herbert.Models\Herbert.Models.xproj", "{591EB318-A239-4D9D-9B93-18A1F0BF1EB1}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Herbert.DAL", "src\Herbert.DAL\Herbert.DAL.xproj", "{758A53AB-F24B-4C1E-A83F-726DD9B3E0A3}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Herbert.DAL.Tests", "test\Herbert.DAL.Tests\Herbert.DAL.Tests.xproj", "{E3C6F0E1-57F3-4F41-9287-527F61B674E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE1F9C07-8573-46E5-A643-25795F1DCDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE1F9C07-8573-46E5-A643-25795F1DCDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE1F9C07-8573-46E5-A643-25795F1DCDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE1F9C07-8573-46E5-A643-25795F1DCDBB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{591EB318-A239-4D9D-9B93-18A1F0BF1EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{591EB318-A239-4D9D-9B93-18A1F0BF1EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{591EB318-A239-4D9D-9B93-18A1F0BF1EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -34,10 +38,6 @@ Global
 		{758A53AB-F24B-4C1E-A83F-726DD9B3E0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{758A53AB-F24B-4C1E-A83F-726DD9B3E0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{758A53AB-F24B-4C1E-A83F-726DD9B3E0A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AE1F9C07-8573-46E5-A643-25795F1DCDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AE1F9C07-8573-46E5-A643-25795F1DCDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AE1F9C07-8573-46E5-A643-25795F1DCDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AE1F9C07-8573-46E5-A643-25795F1DCDBB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E3C6F0E1-57F3-4F41-9287-527F61B674E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3C6F0E1-57F3-4F41-9287-527F61B674E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3C6F0E1-57F3-4F41-9287-527F61B674E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,9 +47,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{AE1F9C07-8573-46E5-A643-25795F1DCDBB} = {E2A3B13A-C386-4B0A-8049-76FF468E89F4}
 		{591EB318-A239-4D9D-9B93-18A1F0BF1EB1} = {E2A3B13A-C386-4B0A-8049-76FF468E89F4}
 		{758A53AB-F24B-4C1E-A83F-726DD9B3E0A3} = {E2A3B13A-C386-4B0A-8049-76FF468E89F4}
-		{AE1F9C07-8573-46E5-A643-25795F1DCDBB} = {E2A3B13A-C386-4B0A-8049-76FF468E89F4}
 		{E3C6F0E1-57F3-4F41-9287-527F61B674E0} = {403DC38E-AF50-4636-85BB-D1C93C8CA508}
 	EndGlobalSection
 EndGlobal

@@ -1,8 +1,8 @@
-﻿namespace Herbert.Data.EntityConfigurations
+﻿namespace Herbert.DAL.EntityConfigurations
 {
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-    using Herbert.Model.UserInfo;
+    using Herbert.Models.UserInfo;
 
     public static class ApplicationUserConfiguation
     {

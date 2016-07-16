@@ -1,10 +1,10 @@
-namespace Herbert.Data.Repositories
+namespace Herbert.DAL.Repositories
 {
     using System;
     using System.Linq;
 
-    using Herbert.Data.Repositories.Interfaces;
-    using Herbert.Model.UserInfo;
+    using Herbert.DAL.Repositories.Interfaces;
+    using Herbert.Models.UserInfo;
 
     public class ApplicationUserRepository : RepositoryBase, IApplicationUserRepository
     {

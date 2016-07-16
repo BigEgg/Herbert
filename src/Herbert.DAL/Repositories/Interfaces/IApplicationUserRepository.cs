@@ -1,6 +1,6 @@
-namespace Herbert.Data.Repositories.Interfaces
+namespace Herbert.DAL.Repositories.Interfaces
 {
-    using Herbert.Model.UserInfo;
+    using Herbert.Models.UserInfo;
 
     /// <summary>
     /// Repository for Application User entity

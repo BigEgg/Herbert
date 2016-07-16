@@ -18,8 +18,8 @@
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-    "Herbert.Data": "1.0.0-*",
-    "Herbert.Model": "1.0.0-*"
+    "Herbert.DAL": "1.0.0-*",
+    "Herbert.Models": "1.0.0-*"
   },
 
   "tools": {

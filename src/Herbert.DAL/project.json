@@ -5,7 +5,7 @@
     "Microsoft.EntityFrameworkCore": "1.0.0",
     "Microsoft.EntityFrameworkCore.Relational": "1.0.0",
     "NETStandard.Library": "1.6.0",
-    "Herbert.Model": "1.0.0-*"
+    "Herbert.Models": "1.0.0-*"
   },
 
   "frameworks": {

@@ -1,4 +1,4 @@
-﻿namespace Herbert.Model.UserInfo
+﻿namespace Herbert.Models.UserInfo
 {
     using System;
 

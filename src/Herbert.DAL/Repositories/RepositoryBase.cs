@@ -1,4 +1,4 @@
-﻿namespace Herbert.Data.Repositories
+﻿namespace Herbert.DAL.Repositories
 {
     /// <summary>
     /// The basic class for Repository

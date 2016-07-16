@@ -1,4 +1,4 @@
-﻿namespace Herbert.Data.Tests.Repositories
+﻿namespace Herbert.DAL.Tests.Repositories
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;

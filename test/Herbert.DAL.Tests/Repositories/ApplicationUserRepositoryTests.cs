@@ -1,10 +1,10 @@
-﻿namespace Herbert.Data.Tests.Repositories
+﻿namespace Herbert.DAL.Tests.Repositories
 {
     using System;
     using Xunit;
 
-    using Herbert.Data.Repositories;
-    using Herbert.Model.UserInfo;
+    using Herbert.DAL.Repositories;
+    using Herbert.Models.UserInfo;
 
     public class ApplicationUserRepositoryTests : RepositoryTestBase
     {
