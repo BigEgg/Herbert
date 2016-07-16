@@ -8,8 +8,8 @@ using Herbert.DAL;
 namespace Herbert.API.Migrations
 {
     [DbContext(typeof(HerbertContext))]
-    [Migration("20160715123347_CreateApplicationUser")]
-    partial class CreateApplicationUser
+    [Migration("20160716115502_CreateApplicationUserTable")]
+    partial class CreateApplicationUserTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -17,27 +17,28 @@ namespace Herbert.API.Migrations
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Herbert.Model.UserInfo.ApplicationUser", b =>
+            modelBuilder.Entity("Herbert.Models.UserInfo.ApplicationUser", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreatedTime")
-                        .ValueGeneratedOnAdd();
+                        .IsConcurrencyToken();
 
                     b.Property<string>("Email")
                         .IsConcurrencyToken()
                         .IsRequired()
-                        .HasAnnotation("MaxLength", 255);
+                        .HasAnnotation("MaxLength", 256);
 
-                    b.Property<DateTime>("LastUpdated")
-                        .ValueGeneratedOnAddOrUpdate();
+                    b.Property<DateTime>("LastUpdated");
 
                     b.Property<string>("NickName")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 64);
 
                     b.Property<string>("Password")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 256);
 
                     b.Property<int>("RegisterSource");
 

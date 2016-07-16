@@ -16,7 +16,7 @@ namespace Herbert.API.Migrations
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Herbert.Model.UserInfo.ApplicationUser", b =>
+            modelBuilder.Entity("Herbert.Models.UserInfo.ApplicationUser", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
@@ -27,15 +27,17 @@ namespace Herbert.API.Migrations
                     b.Property<string>("Email")
                         .IsConcurrencyToken()
                         .IsRequired()
-                        .HasAnnotation("MaxLength", 255);
+                        .HasAnnotation("MaxLength", 256);
 
                     b.Property<DateTime>("LastUpdated");
 
                     b.Property<string>("NickName")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 64);
 
                     b.Property<string>("Password")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 256);
 
                     b.Property<int>("RegisterSource");
 

@@ -1,7 +1,6 @@
 ﻿namespace Herbert.DAL.Tests.Repositories
 {
     using System;
-    using System.Threading.Tasks;
     using Xunit;
 
     using Herbert.DAL.Repositories;

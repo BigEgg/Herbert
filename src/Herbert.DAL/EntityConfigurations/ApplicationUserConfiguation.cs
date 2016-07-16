@@ -20,14 +20,16 @@
 
             entityBuilder.Property(u => u.Email)
                 .IsRequired()
-                .HasMaxLength(255)
+                .HasMaxLength(256)
                 .IsConcurrencyToken();
 
             entityBuilder.Property(u => u.Password)
-                .IsRequired();
+                .IsRequired()
+                .HasMaxLength(256);
 
             entityBuilder.Property(u => u.NickName)
-                .IsRequired();
+                .IsRequired()
+                .HasMaxLength(64);
 
             entityBuilder.Property(u => u.CreatedTime)
                 .IsConcurrencyToken()
