@@ -8,6 +8,45 @@
 
     public class ApplicationUserRepositoryTests : RepositoryTestBase
     {
+        [Fact(DisplayName = "Should check contract")]
+        public void TestAddNewUser_Contract_Email()
+        {
+            using (var context = new TestHerbertContext())
+            {
+                var repository = new ApplicationUserRepository(context);
+
+                Assert.Throws<DbUpdateException>(() =>
+                    repository.AddNewUser(new string('A', 257), "encryptPassword", "BigEgg", RegisterSourceType.Website)
+                );
+            }
+        }
+
+        [Fact(DisplayName = "Should check contract")]
+        public void TestAddNewUser_Contract_Password()
+        {
+            using (var context = new TestHerbertContext())
+            {
+                var repository = new ApplicationUserRepository(context);
+
+                Assert.Throws<DbUpdateException>(() =>
+                    repository.AddNewUser("email1@email.com", new string('A', 257), "BigEgg", RegisterSourceType.Website)
+                );
+            }
+        }
+
+        [Fact(DisplayName = "Should check contract")]
+        public void TestAddNewUser_Contract_NickName()
+        {
+            using (var context = new TestHerbertContext())
+            {
+                var repository = new ApplicationUserRepository(context);
+
+                Assert.Throws<DbUpdateException>(() =>
+                    repository.AddNewUser("email1@email.com", "encryptedPassword", new string('A', 65), RegisterSourceType.Website)
+                );
+            }
+        }
+
         [Fact(DisplayName = "Can add multiple user")]
         public void TestAddNewUser()
         {
