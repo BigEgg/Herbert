@@ -7,7 +7,7 @@
     using Microsoft.Extensions.Logging;
     using Microsoft.EntityFrameworkCore;
 
-    using Herbert.Data;
+    using Herbert.DAL;
 
     /// <summary>
     /// Application Start up

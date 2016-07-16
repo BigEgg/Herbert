@@ -1,8 +1,8 @@
-﻿namespace Herbert.Data.EntityConfigurations
+﻿namespace Herbert.DAL.EntityConfigurations
 {
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-    using Herbert.Model.UserInfo;
+    using Herbert.Models.UserInfo;
 
     public static class ApplicationUserConfiguation
     {
@@ -20,20 +20,23 @@
 
             entityBuilder.Property(u => u.Email)
                 .IsRequired()
-                .HasMaxLength(255)
+                .HasMaxLength(256)
                 .IsConcurrencyToken();
 
             entityBuilder.Property(u => u.Password)
-                .IsRequired();
+                .IsRequired()
+                .HasMaxLength(256);
 
             entityBuilder.Property(u => u.NickName)
-                .IsRequired();
+                .IsRequired()
+                .HasMaxLength(64);
 
             entityBuilder.Property(u => u.CreatedTime)
-                .ValueGeneratedOnAdd();
+                .IsConcurrencyToken()
+                .IsRequired();
 
             entityBuilder.Property(u => u.LastUpdated)
-                .ValueGeneratedOnAddOrUpdate();
+                .IsRequired();
         }
     }
 }

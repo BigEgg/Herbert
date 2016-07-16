@@ -1,4 +1,4 @@
-﻿namespace Herbert.Model.UserInfo
+﻿namespace Herbert.Models.UserInfo
 {
     /// <summary>
     /// The source to understand where user come from

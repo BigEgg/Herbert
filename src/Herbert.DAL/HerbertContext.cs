@@ -1,9 +1,9 @@
-﻿namespace Herbert.Data
+﻿namespace Herbert.DAL
 {
     using Microsoft.EntityFrameworkCore;
 
-    using Herbert.Model.UserInfo;
-    using Herbert.Data.EntityConfigurations;
+    using Herbert.DAL.EntityConfigurations;
+    using Herbert.Models.UserInfo;
 
     /// <summary>
     /// The DbContext instance for the Herbert application

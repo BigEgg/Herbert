@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Herbert.API.Migrations
 {
-    public partial class CreateApplicationUser : Migration
+    public partial class CreateApplicationUserTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,10 +14,10 @@ namespace Herbert.API.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     CreatedTime = table.Column<DateTime>(nullable: false),
-                    Email = table.Column<string>(maxLength: 255, nullable: false),
+                    Email = table.Column<string>(maxLength: 256, nullable: false),
                     LastUpdated = table.Column<DateTime>(nullable: false),
-                    NickName = table.Column<string>(nullable: false),
-                    Password = table.Column<string>(nullable: false),
+                    NickName = table.Column<string>(maxLength: 64, nullable: false),
+                    Password = table.Column<string>(maxLength: 256, nullable: false),
                     RegisterSource = table.Column<int>(nullable: false),
                     Role = table.Column<int>(nullable: false)
                 },
