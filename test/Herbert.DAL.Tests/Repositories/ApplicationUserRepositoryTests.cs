@@ -58,5 +58,16 @@
                 Assert.True(user.LastUpdated > DateTime.UtcNow.AddMinutes(-10), "Last Updated Time should be set.");
             }
         }
+
+        [Fact(DisplayName = "Get null when no matched user info in DB")]
+        public void TestGetUser_NotExist()
+        {
+            using (var context = new HerbertContext(CreateNewContextOptions()))
+            {
+                var repository = new ApplicationUserRepository(context);
+
+                Assert.Null(repository.GetUser("email@email.com"));
+            }
+        }
     }
 }

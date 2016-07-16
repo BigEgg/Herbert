@@ -3,7 +3,7 @@ namespace Herbert.DAL.Repositories.Interfaces
     using Herbert.Models.UserInfo;
 
     /// <summary>
-    /// Repository for Application User entity
+    /// The DAL logicals for <see cref="ApplicationUser"/> entity.
     /// </summary>
     public interface IApplicationUserRepository
     {
@@ -11,10 +11,10 @@ namespace Herbert.DAL.Repositories.Interfaces
         /// Add a new user.
         /// </summary>
         /// <param name="email">The email.</param>
-        /// <param name="encryptPassword">The encrypt password.</param>
+        /// <param name="encryptedPassword">The encrypted password.</param>
         /// <param name="nickName">The nick name.</param>
         /// <param name="registerSource">The register source.</param>
-        void AddNewUser(string email, string encryptPassword, string nickName, RegisterSourceType registerSource);
+        void AddNewUser(string email, string encryptedPassword, string nickName, RegisterSourceType registerSource);
 
         /// <summary>
         /// Gets The application user with specific email.

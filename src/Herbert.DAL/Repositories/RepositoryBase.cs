@@ -5,7 +5,7 @@
     /// </summary>
     public abstract class RepositoryBase
     {
-        private HerbertContext context;
+        private readonly HerbertContext context;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RepositoryBase"/> class.
