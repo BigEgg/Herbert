@@ -1,4 +1,7 @@
-﻿{
+{
+  "title": "Herbert.Services",
+  "copyright": "BigEgg",
+  "description": "The Business Logical Layer for Herbert API",
   "version": "1.0.0-*",
 
   "dependencies": {

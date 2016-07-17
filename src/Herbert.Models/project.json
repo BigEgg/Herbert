@@ -1,4 +1,7 @@
-﻿{
+{
+  "title": "Herbert.Models",
+  "copyright": "BigEgg",
+  "description": "The Model for Herbert API",
   "version": "1.0.0-*",
 
   "dependencies": {
