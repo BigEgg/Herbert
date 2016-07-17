@@ -3,6 +3,7 @@
     using Microsoft.EntityFrameworkCore;
 
     using Herbert.DAL.EntityConfigurations;
+    using Herbert.Models.Access;
     using Herbert.Models.UserInfo;
 
     /// <summary>
@@ -12,6 +13,7 @@
     public class HerbertContext : DbContext
     {
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<SupportApplication> SupportApplications { get; set; }
 
 
         /// <summary>
@@ -34,6 +36,7 @@
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ApplicationUser>().SetupContracts();
+            modelBuilder.Entity<SupportApplication>().SetupContracts();
         }
     }
 }
