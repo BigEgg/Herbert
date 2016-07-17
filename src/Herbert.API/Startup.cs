@@ -8,6 +8,7 @@
     using Microsoft.EntityFrameworkCore;
 
     using Herbert.DAL;
+    using Configurations;
 
     /// <summary>
     /// Application Start up
@@ -53,11 +54,13 @@
                 options.UseSqlServer(Configuration["Data:HerbertConnection:ConnectionString"],
                 b => b.MigrationsAssembly("Herbert.API")));
 
-
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
+
+            services.SetupUserInfo();
+            services.SetupAccess();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline

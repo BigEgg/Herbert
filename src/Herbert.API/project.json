@@ -23,7 +23,8 @@
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "Herbert.DAL": "1.0.0-*",
-    "Herbert.Models": "1.0.0-*"
+    "Herbert.Models": "1.0.0-*",
+    "Herbert.Services": "1.0.0-*"
   },
 
   "tools": {
