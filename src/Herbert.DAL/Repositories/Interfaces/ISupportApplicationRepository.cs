@@ -7,7 +7,7 @@
     /// <summary>
     /// The DAL logicals for <see cref="SupportApplication"/> entity.
     /// </summary>
-    interface ISupportApplicationRepository
+    public interface ISupportApplicationRepository
     {
         /// <summary>
         /// Gets all support applications.
