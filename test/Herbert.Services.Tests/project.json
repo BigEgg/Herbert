@@ -1,4 +1,6 @@
 {
+  "title": "Herbert.Services.Tests",
+  "description": "The test project for Herbert Business Logical project",
   "version": "1.0.0-*",
   "buildOptions": {
     "debugType": "portable"

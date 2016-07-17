@@ -1,4 +1,7 @@
-﻿{
+{
+  "title": "Herbert.DAL",
+  "copyright": "BigEgg",
+  "description": "The Data Access Layer for Herbert API",
   "version": "1.0.0-*",
 
   "dependencies": {

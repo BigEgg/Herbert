@@ -1,4 +1,7 @@
 {
+  "title": "Herbert.DAL.Tests",
+  "copyright": "BigEgg",
+  "description": "The test project for Herbert Data Access Layer Logical project",
   "version": "1.0.0-*",
   "buildOptions": {
     "debugType": "portable"

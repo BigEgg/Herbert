@@ -1,4 +1,7 @@
-﻿{
+{
+  "title": "Herbert.API",
+  "copyright": "BigEgg",
+  "description": "The API Web Role application for Herbert",
   "dependencies": {
     "Microsoft.NETCore.App": {
       "version": "1.0.0",
