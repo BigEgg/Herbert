@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace Herbert.API.Migrations
+﻿namespace Herbert.API.Migrations
 {
+    using System;
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class CreateApplicationUserTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

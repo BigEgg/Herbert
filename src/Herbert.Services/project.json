@@ -5,6 +5,7 @@
   "version": "1.0.0-*",
 
   "dependencies": {
+    "Microsoft.Extensions.Caching.Memory": "1.0.0",
     "NETStandard.Library": "1.6.0",
     "Herbert.DAL": "1.0.0-*",
     "Herbert.Models": "1.0.0-*"

@@ -1,15 +1,17 @@
-﻿namespace Herbert.API.Migrations
-{
-    using System;
-    using Microsoft.EntityFrameworkCore;
-    using Microsoft.EntityFrameworkCore.Infrastructure;
-    using Microsoft.EntityFrameworkCore.Metadata;
-    using Herbert.DAL;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
+using Herbert.DAL;
 
+namespace Herbert.API.Migrations
+{
     [DbContext(typeof(HerbertContext))]
-    partial class HerbertContextModelSnapshot : ModelSnapshot
+    [Migration("20160717092005_CreateSupportApplicationTable")]
+    partial class CreateSupportApplicationTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")

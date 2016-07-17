@@ -4,6 +4,9 @@
 
     using Herbert.Models.UserInfo;
 
+    /// <summary>
+    /// The DB Context configuration for Application User model
+    /// </summary>
     public static class ApplicationUserConfiguation
     {
         /// <summary>

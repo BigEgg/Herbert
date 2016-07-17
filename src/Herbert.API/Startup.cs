@@ -8,6 +8,7 @@
     using Microsoft.EntityFrameworkCore;
 
     using Herbert.DAL;
+    using Configurations;
 
     /// <summary>
     /// Application Start up
@@ -46,16 +47,20 @@
         // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMemoryCache();
+     
             // Setup DB Context
             services.AddDbContext<HerbertContext>(options =>
                 options.UseSqlServer(Configuration["Data:HerbertConnection:ConnectionString"],
                 b => b.MigrationsAssembly("Herbert.API")));
 
-
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
+
+            services.SetupUserInfo();
+            services.SetupAccess();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
