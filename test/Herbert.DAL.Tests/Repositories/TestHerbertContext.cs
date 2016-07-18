@@ -4,7 +4,6 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Storage;
     using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
     using System.IO;
 
     public class TestHerbertContext : HerbertContext, IDisposable
@@ -31,9 +30,17 @@
 
         private static IConfigurationRoot GetConfiguration()
         {
+            var environment = Environment.GetEnvironmentVariable("TEST_ENVIRONMENT");
+            if (string.IsNullOrWhiteSpace(environment))
+            {
+                environment = "Development";
+            }
+
             var builder = new ConfigurationBuilder();
-            builder.SetBasePath(Directory.GetCurrentDirectory());
-            builder.AddJsonFile("appsettings.json");
+            builder.SetBasePath(Directory.GetCurrentDirectory())
+                   .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                    .AddJsonFile($"appsettings.{environment.ToLower()}.json", optional: true);
+
             return builder.Build();
         }
 
