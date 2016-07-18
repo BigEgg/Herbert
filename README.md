@@ -2,6 +2,14 @@
 
 **Herbert** is an exciting puzzle game.
 
+----------
+
+## Status
+
+![Visual Studio Online](https://img.shields.io/vso/build/bigegg/7a38a7d9-01af-4fd3-be03-e24a70018635/1.svg?maxAge=3600&style=flat-square&label=VSO%20Build)
+
+## About Herbert
+
 It previously used in Microsoft's [Imagine Cup](https://www.imaginecup.com/) Algorithm Competitions in 2007-2009.
 
 It will challenge your ability to see patterns and create algorithms to produce these patterns. It can be used both as a teaching tool for programming as well as a challenge for seasoned programmers.
