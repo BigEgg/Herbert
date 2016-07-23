@@ -7,8 +7,8 @@ describe('herbert-ui App', function() {
     page = new HerbertUIPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying Herbert', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Herbert');
   });
 });

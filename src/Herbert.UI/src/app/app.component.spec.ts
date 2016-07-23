@@ -13,8 +13,8 @@ describe('App: HerbertUI', () => {
       expect(app).toBeTruthy();
     }));
 
-  it('should have as title \'app works!\'',
+  it('should have as title \'Herbert\'',
     inject([AppComponent], (app: AppComponent) => {
-      expect(app.title).toEqual('app works!');
+      expect(app.title).toEqual('Herbert');
     }));
 });

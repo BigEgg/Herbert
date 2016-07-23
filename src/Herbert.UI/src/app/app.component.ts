@@ -11,5 +11,5 @@ import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 })
 
 export class AppComponent {
-  title = 'app works!';
+  title = 'Herbert';
 }
