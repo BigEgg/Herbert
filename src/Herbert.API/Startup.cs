@@ -1,14 +1,17 @@
 ﻿namespace Herbert.API
 {
+    using System.Net;
     using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Diagnostics;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
     using Microsoft.EntityFrameworkCore;
 
     using Herbert.DAL;
-    using Configurations;
+    using Herbert.API.Configurations;
 
     /// <summary>
     /// Application Start up
@@ -48,7 +51,7 @@
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMemoryCache();
-     
+
             // Setup DB Context
             services.AddDbContext<HerbertContext>(options =>
                 options.UseSqlServer(Configuration["Data:HerbertConnection:ConnectionString"],
@@ -72,6 +75,23 @@
             app.UseApplicationInsightsRequestTelemetry();
 
             app.UseApplicationInsightsExceptionTelemetry();
+
+            app.UseExceptionHandler(
+                builder =>
+                {
+                    builder.Run(
+                      async context =>
+                      {
+                          context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                          context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+
+                          var error = context.Features.Get<IExceptionHandlerFeature>();
+                          if (error != null)
+                          {
+                              await context.Response.WriteAsync(error.Error.Message).ConfigureAwait(false);
+                          }
+                      });
+                });
 
             app.UseMvc();
         }
