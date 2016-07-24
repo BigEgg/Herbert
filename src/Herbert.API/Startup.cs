@@ -9,6 +9,7 @@
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
     using Microsoft.EntityFrameworkCore;
+    using Newtonsoft.Json.Serialization;
 
     using Herbert.DAL;
     using Herbert.API.Configurations;
@@ -60,7 +61,11 @@
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
-            services.AddMvc();
+            services.AddMvc()
+                    .AddJsonOptions(opts =>
+                    {
+                        opts.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                    });
 
             services.SetupUserInfo();
             services.SetupAccess();
