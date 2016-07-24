@@ -3,6 +3,7 @@
   "copyright": "BigEgg",
   "description": "The API Web Role application for Herbert",
   "dependencies": {
+    "FluentValidation": "6.2.1",
     "Microsoft.NETCore.App": {
       "version": "1.0.0",
       "type": "platform"
