@@ -35,5 +35,17 @@
             var result = model.Validate(null);
             Assert.False(result.Any());
         }
+
+        [Fact(DisplayName = "Normal Email should valid")]
+        public void TestCheckEmailRequestvalidatoin_Normal()
+        {
+            var model = new CheckEmailRequest()
+            {
+                Email = "bigegg@bigegg.com"
+            };
+
+            var result = model.Validate(null);
+            Assert.False(result.Any());
+        }
     }
 }
