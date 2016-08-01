@@ -1,9 +1,11 @@
 ﻿namespace Herbert.API.Controllers
 {
-    using Microsoft.AspNetCore.Mvc;
-    using ViewModels.UserInfo;
-    using Services.UserInfo;
     using System.Net;
+    using Microsoft.AspNetCore.Mvc;
+
+    using Herbert.API.Controllers.Filters;
+    using Herbert.API.ViewModels.UserInfo;
+    using Herbert.Services.UserInfo;
 
     [Route("api/user-info")]
     public class UserInfoController : Controller
@@ -17,19 +19,17 @@
 
         // GET api/user-info/check-email
         [HttpGet("check-email", Name = "CheckEmail")]
+        [ValidationRequest]
         public IActionResult CheckEmail([FromBody] CheckEmailRequest request)
         {
-            if (ModelState.IsValid) { return BadRequest(ModelState); }
-
             return Ok(applicationUserService.IsEmailAlreadyUsed(request.Email));
         }
 
         // POST api/user-info/register
         [HttpPost("register", Name = "Register")]
+        [ValidationRequest]
         public IActionResult Register([FromBody] RegisterRequest request)
         {
-            if (ModelState.IsValid) { return BadRequest(ModelState); }
-
             if (applicationUserService.IsEmailAlreadyUsed(request.Email)) { return StatusCode((int)HttpStatusCode.Conflict); }
 
             var user = applicationUserService.NewUser(request.Email, request.Password, request.NickName, request.RegisterSourceType);
