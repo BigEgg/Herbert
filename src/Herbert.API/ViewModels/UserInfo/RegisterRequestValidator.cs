@@ -21,20 +21,20 @@
             RuleFor(viewModel => viewModel.Email)
                 .NotEmpty()
                 .EmailAddress()
-                .Length(256);
+                .Length(1, 256);
 
             RuleFor(viewModel => viewModel.Password)
                 .NotEmpty()
-                .Length(256);
+                .Length(1, 256);
 
             RuleFor(viewModel => viewModel.RepeatPassword)
                 .NotEmpty()
-                .Length(256)
+                .Length(1, 256)
                 .Equal(viewModel => viewModel.Password);
 
             RuleFor(viewModel => viewModel.NickName)
                 .NotEmpty()
-                .Length(64);
+                .Length(1, 64);
 
             RuleFor(viewModel => viewModel.RegisterSource)
                 .NotEmpty()
