@@ -1,23 +1,17 @@
 {
-  "title": "Herbert.DAL.Tests",
-  "copyright": "BigEgg",
-  "description": "The test project for Herbert Data Access Layer Logical project",
   "version": "1.0.0-*",
   "buildOptions": {
     "debugType": "portable"
   },
   "dependencies": {
     "dotnet-test-xunit": "1.0.0-rc2-build10015",
-    "Microsoft.EntityFrameworkCore": "1.0.0",
-    "Microsoft.EntityFrameworkCore.Design": "1.0.0-preview2-final",
-    "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
-    "Microsoft.Extensions.Configuration": "1.0.0",
-    "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
-    "Microsoft.Extensions.Configuration.Json": "1.0.0",
+    "Moq": "4.6.25-alpha",
     "System.Runtime.Serialization.Primitives": "4.1.1",
     "xunit": "2.1.0",
     "Herbert.DAL": "1.0.0-*",
-    "Herbert.Models": "1.0.0-*"
+    "Herbert.Models": "1.0.0-*",
+    "Herbert.Services": "1.0.0-*",
+    "Herbert.API": "1.0.0-*"
   },
   "testRunner": "xunit",
   "frameworks": {
