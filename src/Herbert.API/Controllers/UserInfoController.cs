@@ -19,7 +19,7 @@
 
         // GET api/user-info/check-email
         [HttpGet("check-email", Name = "CheckEmail")]
-        [ValidationRequest]
+        [ValidateRequest]
         public IActionResult CheckEmail([FromBody] CheckEmailRequest request)
         {
             return Ok(applicationUserService.IsEmailAlreadyUsed(request.Email));
@@ -27,7 +27,7 @@
 
         // POST api/user-info/register
         [HttpPost("register", Name = "Register")]
-        [ValidationRequest]
+        [ValidateRequest]
         public IActionResult Register([FromBody] RegisterRequest request)
         {
             if (applicationUserService.IsEmailAlreadyUsed(request.Email)) { return StatusCode((int)HttpStatusCode.Conflict); }
