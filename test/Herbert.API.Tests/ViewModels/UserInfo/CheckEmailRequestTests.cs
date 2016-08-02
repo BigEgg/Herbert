@@ -25,7 +25,7 @@
         }
 
         [Fact(DisplayName = "Long Email should valid")]
-        public void TestCheckEmailRequestvalidatoin_LongButNotOverflow()
+        public void TestCheckEmailRequestValidation_LongButNotOverflow()
         {
             var model = new CheckEmailRequest()
             {
@@ -37,7 +37,7 @@
         }
 
         [Fact(DisplayName = "Normal Email should valid")]
-        public void TestCheckEmailRequestvalidatoin_Normal()
+        public void TestCheckEmailRequestValidation_Normal()
         {
             var model = new CheckEmailRequest()
             {
