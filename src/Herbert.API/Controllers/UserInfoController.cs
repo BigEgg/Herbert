@@ -22,7 +22,7 @@
         [ValidateRequest]
         public IActionResult CheckEmail([FromBody] CheckEmailRequest request)
         {
-            return Ok(applicationUserService.IsEmailAlreadyUsed(request.Email));
+            return Ok(new CheckEmailResponse(applicationUserService.IsEmailAlreadyUsed(request.Email)));
         }
 
         // POST api/user-info/register
