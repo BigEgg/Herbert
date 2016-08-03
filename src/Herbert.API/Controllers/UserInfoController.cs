@@ -26,20 +26,20 @@
         }
 
         // POST api/user-info/register
-        [HttpPost("register", Name = "Register")]
+        [HttpPost("signup", Name = "Register")]
         [ValidateRequest]
-        public IActionResult Register([FromBody] RegisterRequest request)
+        public IActionResult SignUp([FromBody] RegisterRequest request)
         {
             if (applicationUserService.IsEmailAlreadyUsed(request.Email)) { return StatusCode((int)HttpStatusCode.Conflict); }
 
             var user = applicationUserService.NewUser(request.Email, request.Password, request.NickName, request.RegisterSourceType);
 
-            return CreatedAtRoute("SignIn", new { });
+            return CreatedAtRoute("LogIn", new { });
         }
 
         // POST api/user-info/sign-up
-        [HttpPost("sign-up", Name = "SignUp")]
-        public IActionResult SignUp([FromBody] SignUpRequest request)
+        [HttpPost("login", Name = "LogIn")]
+        public IActionResult LogIn([FromBody] SignUpRequest request)
         {
             return NotFound();
         }
