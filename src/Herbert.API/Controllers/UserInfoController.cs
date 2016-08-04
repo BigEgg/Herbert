@@ -7,6 +7,7 @@
     using Herbert.API.ViewModels.UserInfo;
     using Herbert.Services.UserInfo;
 
+    [ValidateRequest]
     [Route("api/user-info")]
     public class UserInfoController : Controller
     {
@@ -19,14 +20,12 @@
 
         // GET api/user-info/check-email
         [HttpGet("check-email", Name = "CheckEmail")]
-        [ValidateRequest]
         public IActionResult CheckEmail([FromBody] CheckEmailRequest request)
         {
             return Ok(new CheckEmailResponse(applicationUserService.IsEmailAlreadyUsed(request.Email)));
         }
 
         // POST api/user-info/register
-        [ValidateRequest]
         [HttpPost("signup", Name = "SignUp")]
         public IActionResult SignUp([FromBody] SignUpRequest request)
         {
