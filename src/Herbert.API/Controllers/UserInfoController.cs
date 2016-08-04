@@ -26,9 +26,9 @@
         }
 
         // POST api/user-info/register
-        [HttpPost("signup", Name = "Register")]
         [ValidateRequest]
-        public IActionResult SignUp([FromBody] RegisterRequest request)
+        [HttpPost("signup", Name = "SignUp")]
+        public IActionResult SignUp([FromBody] SignUpRequest request)
         {
             if (applicationUserService.IsEmailAlreadyUsed(request.Email)) { return StatusCode((int)HttpStatusCode.Conflict); }
 
@@ -39,7 +39,7 @@
 
         // POST api/user-info/sign-up
         [HttpPost("login", Name = "LogIn")]
-        public IActionResult LogIn([FromBody] SignUpRequest request)
+        public IActionResult LogIn([FromBody] LogInRequest request)
         {
             return NotFound();
         }

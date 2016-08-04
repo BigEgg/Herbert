@@ -6,7 +6,7 @@
     using Herbert.API.ViewModels.UserInfo;
     using Herbert.Models.UserInfo;
 
-    public class RegisterRequestTests
+    public class SignUpRequestTests
     {
         [Theory(DisplayName = "Check User Info VM Validation - Email")]
         [InlineData("")]
@@ -16,7 +16,7 @@
         [InlineData("abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWX@bigegg.com")]
         public void TestRegisterRequestValidation_Email(string email)
         {
-            var model = new RegisterRequest()
+            var model = new SignUpRequest()
             {
                 Email = email,
                 Password = "Password!@#",
@@ -36,7 +36,7 @@
         [InlineData("abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabc")]
         public void TestRegisterRequestValidation_Password(string password)
         {
-            var model = new RegisterRequest()
+            var model = new SignUpRequest()
             {
                 Email = "bigegg@bigegg.com",
                 Password = password,
@@ -55,7 +55,7 @@
         [InlineData("abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabc")]
         public void TestRegisterRequestValidation_NickName(string nickName)
         {
-            var model = new RegisterRequest()
+            var model = new SignUpRequest()
             {
                 Email = "bigegg@bigegg.com",
                 Password = "Password!@#",
@@ -74,7 +74,7 @@
         [InlineData("abcdefg")]
         public void TestRegisterRequestValidation_RegisterSource(string registerSource)
         {
-            var model = new RegisterRequest()
+            var model = new SignUpRequest()
             {
                 Email = "bigegg@bigegg.com",
                 Password = "Password!@#",
@@ -89,7 +89,7 @@
         [Fact(DisplayName = "Should valid")]
         public void TestRegisterRequestValidation_Normal()
         {
-            var model = new RegisterRequest()
+            var model = new SignUpRequest()
             {
                 Email = "bigegg@bigegg.com",
                 Password = "Password!@#",

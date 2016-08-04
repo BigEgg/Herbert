@@ -6,15 +6,15 @@
     using Herbert.Models.UserInfo;
 
     /// <summary>
-    /// The validator class for <see cref="RegisterRequest"/> class.
+    /// The validator class for <see cref="SignUpRequest"/> class.
     /// </summary>
     /// <seealso cref="FluentValidation.AbstractValidator{RegisterRequest}" />
-    internal class RegisterRequestValidator : AbstractValidator<RegisterRequest>
+    internal class SignUpRequestValidator : AbstractValidator<SignUpRequest>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RegisterRequestValidator"/> class.
+        /// Initializes a new instance of the <see cref="SignUpRequestValidator"/> class.
         /// </summary>
-        public RegisterRequestValidator()
+        public SignUpRequestValidator()
         {
             CascadeMode = CascadeMode.StopOnFirstFailure;
 
