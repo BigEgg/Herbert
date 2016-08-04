@@ -20,7 +20,6 @@
             {
                 Email = email,
                 Password = "Password!@#",
-                RepeatPassword = "Password!@#",
                 NickName = "BigEgg",
                 RegisterSource = "Website"
             };
@@ -41,29 +40,6 @@
             {
                 Email = "bigegg@bigegg.com",
                 Password = password,
-                RepeatPassword = "Password!@#",
-                NickName = "BigEgg",
-                RegisterSource = "Website"
-            };
-
-            var result = model.Validate(null);
-            Assert.True(result.Any());
-        }
-
-        [Theory(DisplayName = "Check User Info VM Validation - Repeat Password")]
-        [InlineData("")]
-        [InlineData(null)]
-        [InlineData("    ")]
-        [InlineData("abcdefg")]
-        [InlineData("Password!@#12")]
-        [InlineData("abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabc")]
-        public void TestRegisterRequestValidation_RepeatPassword(string password)
-        {
-            var model = new RegisterRequest()
-            {
-                Email = "bigegg@bigegg.com",
-                Password = "Password!@#",
-                RepeatPassword = password,
                 NickName = "BigEgg",
                 RegisterSource = "Website"
             };
@@ -83,7 +59,6 @@
             {
                 Email = "bigegg@bigegg.com",
                 Password = "Password!@#",
-                RepeatPassword = "Password!@#",
                 NickName = nickName,
                 RegisterSource = "Website"
             };
@@ -103,7 +78,6 @@
             {
                 Email = "bigegg@bigegg.com",
                 Password = "Password!@#",
-                RepeatPassword = "Password!@#",
                 NickName = "BigEgg",
                 RegisterSource = registerSource
             };
@@ -119,7 +93,6 @@
             {
                 Email = "bigegg@bigegg.com",
                 Password = "Password!@#",
-                RepeatPassword = "Password!@#",
                 NickName = "BigEgg",
                 RegisterSource = "Website"
             };

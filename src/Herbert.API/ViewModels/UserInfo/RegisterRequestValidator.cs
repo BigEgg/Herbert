@@ -27,11 +27,6 @@
                 .NotEmpty()
                 .Length(8, 64);
 
-            RuleFor(viewModel => viewModel.RepeatPassword)
-                .NotEmpty()
-                .Length(8, 64)
-                .Equal(viewModel => viewModel.Password);
-
             RuleFor(viewModel => viewModel.NickName)
                 .NotEmpty()
                 .Length(1, 64);

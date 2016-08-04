@@ -30,14 +30,6 @@
         public string Password { get; set; }
 
         /// <summary>
-        /// Gets or sets the repeat password.
-        /// </summary>
-        /// <value>
-        /// The repeat password.
-        /// </value>
-        public string RepeatPassword { get; set; }
-
-        /// <summary>
         /// Gets or sets the nick name.
         /// </summary>
         /// <value>
