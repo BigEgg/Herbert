@@ -1,10 +1,13 @@
 ﻿namespace Herbert.API.Controllers
 {
-    using Microsoft.AspNetCore.Mvc;
-    using ViewModels.UserInfo;
-    using Services.UserInfo;
     using System.Net;
+    using Microsoft.AspNetCore.Mvc;
 
+    using Herbert.API.Controllers.Filters;
+    using Herbert.API.ViewModels.UserInfo;
+    using Herbert.Services.UserInfo;
+
+    [ValidateRequest]
     [Route("api/user-info")]
     public class UserInfoController : Controller
     {
@@ -19,27 +22,23 @@
         [HttpGet("check-email", Name = "CheckEmail")]
         public IActionResult CheckEmail([FromBody] CheckEmailRequest request)
         {
-            if (ModelState.IsValid) { return BadRequest(ModelState); }
-
-            return Ok(applicationUserService.IsEmailAlreadyUsed(request.Email));
+            return Ok(new CheckEmailResponse(applicationUserService.IsEmailAlreadyUsed(request.Email)));
         }
 
         // POST api/user-info/register
-        [HttpPost("register", Name = "Register")]
-        public IActionResult Register([FromBody] RegisterRequest request)
+        [HttpPost("signup", Name = "SignUp")]
+        public IActionResult SignUp([FromBody] SignUpRequest request)
         {
-            if (ModelState.IsValid) { return BadRequest(ModelState); }
-
             if (applicationUserService.IsEmailAlreadyUsed(request.Email)) { return StatusCode((int)HttpStatusCode.Conflict); }
 
             var user = applicationUserService.NewUser(request.Email, request.Password, request.NickName, request.RegisterSourceType);
 
-            return CreatedAtRoute("SignIn", new { });
+            return CreatedAtRoute("LogIn", new { });
         }
 
         // POST api/user-info/sign-up
-        [HttpPost("sign-up", Name = "SignUp")]
-        public IActionResult SignUp([FromBody] SignUpRequest request)
+        [HttpPost("login", Name = "LogIn")]
+        public IActionResult LogIn([FromBody] LogInRequest request)
         {
             return NotFound();
         }

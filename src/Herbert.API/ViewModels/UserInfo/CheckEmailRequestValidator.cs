@@ -18,7 +18,7 @@
             RuleFor(viewModel => viewModel.Email)
                 .NotEmpty()
                 .EmailAddress()
-                .Length(256);
+                .Length(1, 256);
         }
     }
 }

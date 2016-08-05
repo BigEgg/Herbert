@@ -6,35 +6,30 @@
     using Herbert.Models.UserInfo;
 
     /// <summary>
-    /// The validator class for <see cref="RegisterRequest"/> class.
+    /// The validator class for <see cref="SignUpRequest"/> class.
     /// </summary>
     /// <seealso cref="FluentValidation.AbstractValidator{RegisterRequest}" />
-    internal class RegisterRequestValidator : AbstractValidator<RegisterRequest>
+    internal class SignUpRequestValidator : AbstractValidator<SignUpRequest>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RegisterRequestValidator"/> class.
+        /// Initializes a new instance of the <see cref="SignUpRequestValidator"/> class.
         /// </summary>
-        public RegisterRequestValidator()
+        public SignUpRequestValidator()
         {
             CascadeMode = CascadeMode.StopOnFirstFailure;
 
             RuleFor(viewModel => viewModel.Email)
                 .NotEmpty()
                 .EmailAddress()
-                .Length(256);
+                .Length(1, 256);
 
             RuleFor(viewModel => viewModel.Password)
                 .NotEmpty()
-                .Length(256);
-
-            RuleFor(viewModel => viewModel.RepeatPassword)
-                .NotEmpty()
-                .Length(256)
-                .Equal(viewModel => viewModel.Password);
+                .Length(8, 64);
 
             RuleFor(viewModel => viewModel.NickName)
                 .NotEmpty()
-                .Length(64);
+                .Length(1, 64);
 
             RuleFor(viewModel => viewModel.RegisterSource)
                 .NotEmpty()
