@@ -20,7 +20,7 @@
 
         // GET api/user-info/check-email
         [HttpGet("check-email", Name = "CheckEmail")]
-        public IActionResult CheckEmail([FromBody] CheckEmailRequest request)
+        public IActionResult CheckEmail([FromQuery] CheckEmailRequest request)
         {
             return Ok(new CheckEmailResponse(applicationUserService.IsEmailAlreadyUsed(request.Email)));
         }
