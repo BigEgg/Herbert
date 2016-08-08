@@ -20,13 +20,13 @@
     {
         private const string APP_AUTHORIZE_SOURCE_TYPE_KEY = "X-Herbert-ClientSource";
         private const string APP_AUTHORIZE_TOKEN_KEY = "X-Herbert-Authenticate";
-        private readonly SupportApplicationService supportApplicationService;
+        private readonly ISupportApplicationService supportApplicationService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationAuthorize"/> class.
         /// </summary>
         /// <param name="supportApplicationService">The support application service.</param>
-        public ApplicationAuthorizeAttribute(SupportApplicationService supportApplicationService)
+        public ApplicationAuthorizeAttribute(ISupportApplicationService supportApplicationService)
         {
             this.supportApplicationService = supportApplicationService;
         }
