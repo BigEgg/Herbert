@@ -17,8 +17,16 @@
         {
             if (string.IsNullOrWhiteSpace(base64String)) { return string.Empty; }
 
-            byte[] bytes = Convert.FromBase64String(base64String);
-            return Encoding.ASCII.GetString(bytes);
+            try
+            {
+                base64String = base64String.PadRight(base64String.Length + (4 - base64String.Length % 4) % 4, '=');
+                byte[] bytes = Convert.FromBase64String(base64String);
+                return Encoding.ASCII.GetString(bytes);
+            }
+            catch
+            {
+                return string.Empty;
+            }
         }
 
         /// <summary>
