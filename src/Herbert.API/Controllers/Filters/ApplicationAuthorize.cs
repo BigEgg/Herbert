@@ -16,7 +16,7 @@
     /// The Attribute class for check is valid Application to call this API
     /// </summary>
     /// <seealso cref="Microsoft.AspNetCore.Mvc.Filters.ActionFilterAttribute" />
-    public class ApplicationAuthorizeAttribute : ActionFilterAttribute
+    public class ApplicationAuthorize : ActionFilterAttribute
     {
         private const string APP_AUTHORIZE_SOURCE_TYPE_KEY = "X-Herbert-ClientSource";
         private const string APP_AUTHORIZE_TOKEN_KEY = "X-Herbert-Authenticate";
@@ -26,7 +26,7 @@
         /// Initializes a new instance of the <see cref="ApplicationAuthorize"/> class.
         /// </summary>
         /// <param name="supportApplicationService">The support application service.</param>
-        public ApplicationAuthorizeAttribute(ISupportApplicationService supportApplicationService)
+        public ApplicationAuthorize(ISupportApplicationService supportApplicationService)
         {
             this.supportApplicationService = supportApplicationService;
         }

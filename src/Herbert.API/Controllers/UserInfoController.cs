@@ -7,7 +7,7 @@
     using Herbert.API.ViewModels.UserInfo;
     using Herbert.Services.UserInfo;
 
-    [TypeFilter(typeof(ApplicationAuthorizeAttribute))]
+    [TypeFilter(typeof(ApplicationAuthorize))]
     [ValidateRequest]
     [Route("api/user-info")]
     public class UserInfoController : Controller
