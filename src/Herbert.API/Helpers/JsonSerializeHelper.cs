@@ -1,12 +1,7 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Herbert.API.Helpers
+﻿namespace Herbert.API.Helpers
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Serialization;
 
     /// <summary>
     /// The helper class for JSON Serialize/Deserialize extensions
@@ -22,6 +17,7 @@ namespace Herbert.API.Helpers
         {
             serializerSettings = new JsonSerializerSettings();
             serializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            serializerSettings.MissingMemberHandling = MissingMemberHandling.Error;
         }
 
 
@@ -35,7 +31,14 @@ namespace Herbert.API.Helpers
         {
             if (string.IsNullOrWhiteSpace(jsonString)) { return default(T); }
 
-            return JsonConvert.DeserializeObject<T>(jsonString, serializerSettings);
+            try
+            {
+                return JsonConvert.DeserializeObject<T>(jsonString, serializerSettings);
+            }
+            catch
+            {
+                return default(T);
+            }
         }
 
         /// <summary>
