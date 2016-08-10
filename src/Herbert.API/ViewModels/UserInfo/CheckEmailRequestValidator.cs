@@ -2,6 +2,8 @@
 {
     using FluentValidation;
 
+    using Herbert.API.Helpers;
+
     /// <summary>
     /// The validator class for <see cref="CheckEmailRequest"/> class.
     /// </summary>
@@ -15,7 +17,7 @@
         {
             CascadeMode = CascadeMode.StopOnFirstFailure;
 
-            RuleFor(viewModel => viewModel.Email)
+            RuleFor(viewModel => viewModel.Email.Base64Decode())
                 .NotEmpty()
                 .EmailAddress()
                 .Length(1, 256);
