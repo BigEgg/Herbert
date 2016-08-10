@@ -8,7 +8,7 @@
     /// <summary>
     /// The business logicals for <see cref="ApplicationUser"/> entity.
     /// </summary>
-    /// <seealso cref="Herbert.Services.UserInfo.IApplicationUserService" />
+    /// <seealso cref="IApplicationUserService" />
     public class ApplicationUserService : IApplicationUserService
     {
         private readonly IApplicationUserRepository repository;

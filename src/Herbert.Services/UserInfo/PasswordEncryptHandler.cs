@@ -7,7 +7,7 @@
     /// <summary>
     /// Password Encrypt Handler
     /// </summary>
-    /// <seealso cref="Herbert.Services.UserInfo.IPasswordEncryptHandler" />
+    /// <seealso cref="IPasswordEncryptHandler" />
     public class PasswordEncryptHandler : IPasswordEncryptHandler
     {
         private const int SALT_LENGTH = 16;

@@ -11,7 +11,7 @@
     /// <summary>
     /// The business logicals for <see cref="SupportApplication"/> entity.
     /// </summary>
-    /// <seealso cref="Herbert.Services.Access.ISupportApplicationService" />
+    /// <seealso cref="ISupportApplicationService" />
     public class SupportApplicationService : ISupportApplicationService
     {
         private const string SUPPORT_APPLICATION_CACHE_KEY = "SUPPORT_APPLICATION_CACHE_KEY";
